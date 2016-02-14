@@ -1,0 +1,31 @@
+{
+  "name": "promise-lite",
+  "version": "1.0.0",
+  "description": "promise lite",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://amery2010@github.com/Amery2010/promise-lite.git"
+  },
+  "keywords": [
+    "promise"
+  ],
+  "author": "Amery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amery2010/promise-lite/issues"
+  },
+  "homepage": "https://github.com/Amery2010/promise-lite#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^1.5.2"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "jshint": "^2.9.1"
+  }
+}
