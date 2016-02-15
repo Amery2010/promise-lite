@@ -3,9 +3,9 @@
  * @author Amery(amery@xiangfa.org)
  */
 
-(function () {
+(function (window) {
     'use strict';
-    
+
     function Promise(deferred) {
 
         if (typeof deferred === 'function') {
@@ -69,7 +69,7 @@
             var pid = id++;
             promise.then(function (value) {
                 values[pid] = value;
-                
+
                 if (--count === 0) {
                     self.resolve(values);
                 }
@@ -100,7 +100,7 @@
         if (this.state === 'pending') {
             return;
         }
-        
+
         while (this.thenables.length && this.thenables[0].promise) {
             var thenable = this.thenables[0],
                 thenPromise = thenable.promise,
@@ -133,4 +133,8 @@
             this.thenables.shift();
         }
     };
-}());
+    
+    if (!('Promise' in window)) {
+        window.Promise = Promise;
+    }
+}(window));

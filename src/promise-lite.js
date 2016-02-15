@@ -3,7 +3,7 @@
  * @author Amery(amery@xiangfa.org)
  */
 
-(function () {
+(function (window) {
     'use strict';
 
     function Promise(deferred) {
@@ -133,4 +133,8 @@
             this.thenables.shift();
         }
     };
-}());
+
+    if (!('Promise' in window)) {
+        window.Promise = Promise;
+    }
+}(window));
