@@ -1,3 +1,5 @@
+
+
 /*
  * @project Promise lite
  * @author Amery(amery@xiangfa.org)
@@ -134,7 +136,13 @@
         }
     };
 
-    if (!('Promise' in window)) {
+    if (typeof define === 'function') {
+        define(function () {
+            return Promise;
+        });
+    } else if (typeof exports !== 'undefined') {
+        module.exports = Promise;
+    } else {
         window.Promise = Promise;
     }
 }(window));
